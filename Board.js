@@ -47,8 +47,6 @@ class Board {
   }
 
   movePiece(piece, newPosition) {
-
-    console.log("--------- move piece ----------");
     this.board[piece.position[0]][piece.position[1]] = " ";
     this.board[newPosition[0]][newPosition[1]] = piece;
 
@@ -56,19 +54,7 @@ class Board {
 
     this.printBoard();
   }
-
-  getPiecePosition(piece) {
-    const positions = [];
-    for (let i = 0; i < this.board.length; i++) {
-      for (let j = 0; j < this.board[i].length; j++) {
-        const cell = this.board[i][j];
-        if (cell && cell.readableName === piece) {
-          positions.push(cell.position);
-        }
-      }
-    }
-    return null;
-  }
 }
+
 
 module.exports = Board;
