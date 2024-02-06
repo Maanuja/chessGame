@@ -35,7 +35,8 @@ class Board {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         const piece = initPlacement[i][j];
-        const isUpperCase = piece !== " " ? piece === piece.toUpperCase() : null;
+        const isUpperCase =
+          piece !== " " ? piece === piece.toUpperCase() : null;
         const position = [i, j];
         this.board[i][j] = new Piece(piece || " ", isUpperCase, position);
       }
@@ -43,6 +44,30 @@ class Board {
 
     this.printBoard();
     return this.board;
+  }
+
+  movePiece(piece, newPosition) {
+
+    console.log("--------- move piece ----------");
+    this.board[piece.position[0]][piece.position[1]] = " ";
+    this.board[newPosition[0]][newPosition[1]] = piece;
+
+    piece.position = newPosition;
+
+    this.printBoard();
+  }
+
+  getPiecePosition(piece) {
+    const positions = [];
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        const cell = this.board[i][j];
+        if (cell && cell.readableName === piece) {
+          positions.push(cell.position);
+        }
+      }
+    }
+    return null;
   }
 }
 
