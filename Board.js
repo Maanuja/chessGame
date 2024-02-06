@@ -47,6 +47,9 @@ class Board {
   }
 
   movePiece(piece, newPosition) {
+	
+    if(['p', 'P'].includes(piece.readableName) && !this.isMovePawnValid(piece, newPosition)) return;
+    
     this.board[piece.position[0]][piece.position[1]] = " ";
     this.board[newPosition[0]][newPosition[1]] = piece;
 
@@ -54,7 +57,10 @@ class Board {
 
     this.printBoard();
   }
+	
+	isMovePawnValid(piece, newPosition) {
+		return(piece.position[0] + 1 === newPosition[0] && piece.position[1] === newPosition[1]);
+	}
 }
-
 
 module.exports = Board;

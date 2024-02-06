@@ -6,7 +6,4 @@ const game = new Board();
 game.printBoard();
 const gameWithPieces = game.initBoardPieces();
 
-console.log(gameWithPieces, "gameWithPieces");
-console.log(gameWithPieces[1][0]);
-
-game.movePiece(gameWithPieces[1][0], [3, 0]);
+game.movePiece(gameWithPieces[1][0], [2, 0]);
