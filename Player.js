@@ -1,7 +1,7 @@
 class Player {
-  constructor(name, uppercase) {
+  constructor(name, isUpperCase) {
     this.playerName = name;
-    this.uppercase = uppercase;
+    this.isUpperCase = isUpperCase;
   }
 }
 

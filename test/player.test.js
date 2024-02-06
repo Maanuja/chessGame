@@ -7,5 +7,5 @@ test("Check if we have 2 players", () => {
 });
 
 test("Check if players are different", () => {  
-	expect(players[0].uppercase).not.toBe(players[1].uppercase);
+	expect(players[0].isUppercase).not.toBe(players[1].isUpperCase);
 });

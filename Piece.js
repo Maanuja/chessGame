@@ -1,7 +1,7 @@
 class Piece {
-  constructor(readableName, color, position) {
+  constructor(readableName, isUppercase, position) {
     this.readableName = readableName;
-    this.color = color;
+    this.isUppercase = isUppercase;
     this.position = position;
   }
 
